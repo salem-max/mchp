@@ -1,0 +1,124 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  CUSTOMER
+  TECHNICIAN
+  BOTH
+}
+
+enum JobStatus {
+  OPEN
+  ASSIGNED
+  IN_PROGRESS
+  COMPLETED
+  DISPUTED
+}
+
+enum TxnStatus {
+  HELD
+  RELEASED
+  REFUNDED
+}
+
+model User {
+  id              String    @id @default(cuid())
+  email           String    @unique
+  name            String
+  role            Role      @default(CUSTOMER)
+  password        String?
+  magicToken      String?
+  magicTokenExpiry DateTime?
+  phone           String?
+  location        Json?     // { lat, lng, address }
+  avgRating       Float?    @default(0)
+  createdAt       DateTime  @default(now())
+  
+  jobsCreated     Job[]     @relation("CustomerJobs")
+  jobsAssigned    Job[]     @relation("TechnicianJobs")
+  technicianProfile TechnicianProfile?
+  // reviewsGiven  Review[]  @relation("Reviewer")
+  // reviewsReceived Review[] @relation("Reviewed")
+}
+
+model TechnicianProfile {
+  userId        String   @id
+  user          User     @relation(fields: [userId], references: [id])
+  skills        String[] // ["plumbing","electrical","ac"]
+  verified      Boolean  @default(false)
+  hourlyRate    Int?
+  isAvailable   Boolean  @default(false)
+}
+
+model Job {
+  id            String   @id @default(cuid())
+  customerId    String
+  customer      User     @relation("CustomerJobs", fields: [customerId], references: [id])
+  technicianId  String?
+  technician    User?    @relation("TechnicianJobs", fields: [technicianId], references: [id])
+  title         String
+  category      String
+  description   String
+  budget        Int      // in cents
+  status        JobStatus @default(OPEN)
+  location      Json
+  images        String[] // Vercel Blob URLs
+  scheduledTime DateTime?
+  createdAt     DateTime @default(now())
+  transactions  Transaction[]
+}
+
+model Transaction {
+  id           String   @id @default(uuid())
+  jobId        String   @unique
+  job          Job      @relation(fields: [jobId], references: [id])
+  customerId   String
+  technicianId String
+  amount       Int      // total paid by customer (cents)
+  platformFee  Int      // commission (cents)
+  technicianPayout Int
+  status       TxnStatus @default(HELD)
+}
+
+// RAG Document storage with pgVector embedding
+model Document {
+  id        String   @id @default(cuid())
+  content   String
+  embedding Unsupported("vector(384)")?  // vector(384) for all-MiniLM-L6-v2
+  metadata  Json?
+  createdAt DateTime @default(now())
+}
+
+// Job analysis history from multi-agent system
+model JobAnalysis {
+  id          String   @id @default(cuid())
+  query       String
+  category    String
+  budgetMin   Float
+  budgetMax   Float
+  currency    String   @default("INR")
+  technicians Json     // suggested technician matches
+  metadata    Json?    // platform, userId, ragContext
+  createdAt   DateTime @default(now())
+}
+
+// Chat history for conversation memory
+model ChatHistory {
+  id        String   @id @default(cuid())
+  platform  String   // telegram, discord, whatsapp, web
+  userId    String   // platform-specific user ID
+  role      String   // user, assistant
+  content   String
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  @@index([platform, userId])
+}

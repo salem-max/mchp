@@ -1,0 +1,9 @@
+{
+  "buildCommand": "prisma generate && next build",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "env": {
+    "NEXT_PUBLIC_APP_URL": "https://firswift.vercel.app",
+    "NEXT_PUBLIC_CALLBACK_URL": "https://firswift.vercel.app/api/auth/callback"
+  }
+}

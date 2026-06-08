@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline - Malaysia Co (Maintenance Services)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+                'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+                'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 20px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .status.offline {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .status.checking {
+            background: #fed7d7;
+            color: #ed8936;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon">📡</div>
+        <div class="status offline" id="status">
+            <span id="status-text">You are offline</span>
+        </div>
+        <h1>No Connection</h1>
+        <p>
+            You're currently offline. Some features may not be available until you're
+            back online.
+        </p>
+        <div class="details">
+            <p>
+                <strong>Tip:</strong> Cached content will still be available. We'll sync
+                your changes when you reconnect.
+            </p>
+        </div>
+        <button id="retry-btn" onclick="retryConnection()">
+            <span id="retry-text">Retry Connection</span>
+        </button>
+    </div>
+
+    <script>
+        let checkingConnection = false;
+
+        function updateStatus() {
+            const statusEl = document.getElementById('status');
+            const statusText = document.getElementById('status-text');
+            const retryBtn = document.getElementById('retry-btn');
+            const retryText = document.getElementById('retry-text');
+
+            if (navigator.onLine) {
+                statusEl.classList.remove('offline');
+                statusEl.classList.add('checking');
+                statusText.textContent = '✓ Connected!';
+
+                // Redirect to home page after 2 seconds
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 1500);
+            } else {
+                statusEl.classList.add('offline');
+                statusEl.classList.remove('checking');
+                statusText.textContent = 'You are offline';
+                retryBtn.disabled = false;
+                retryText.textContent = 'Retry Connection';
+            }
+        }
+
+        function retryConnection() {
+            if (checkingConnection) return;
+
+            checkingConnection = true;
+            const retryBtn = document.getElementById('retry-btn');
+            const retryText = document.getElementById('retry-text');
+
+            retryBtn.disabled = true;
+            retryText.innerHTML = '<span class="spinner"></span> Checking...';
+
+            // Try to fetch a small resource
+            fetch('/manifest.json', { cache: 'no-store' })
+                .then((response) => {
+                    if (response.ok) {
+                        updateStatus();
+                    }
+                })
+                .catch(() => {
+                    // Still offline
+                    checkingConnection = false;
+                    retryText.textContent = 'Retry Connection';
+                    retryBtn.disabled = false;
+                });
+        }
+
+        // Check status on load
+        updateStatus();
+
+        // Listen for connectivity changes
+        window.addEventListener('online', updateStatus);
+        window.addEventListener('offline', updateStatus);
+    </script>
+</body>
+
+</html>

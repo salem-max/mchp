@@ -1,0 +1,3 @@
+export const dynamic = 'force-dynamic';
+import UsersClient from './UsersClient';
+export default function AdminUsersPage() { return <UsersClient />; }

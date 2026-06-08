@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "skills": {
+    "Asset Manager (Residential Multifamily)": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/roles/asset_manager/SKILL.md",
+      "computedHash": "8c9cae5e8e253a0f8c018890fa738dff53c430cb69b4e4ebf504ef7c3ccbdbd1"
+    },
+    "Assistant Property Manager (Residential Multifamily)": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/roles/assistant_property_manager/SKILL.md",
+      "computedHash": "5a350fef4f12c951a0d7f76087340659e6397bd36e25869e830aa6f9a7a51600"
+    },
+    "Bid Leveling and Procurement Review": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/workflows/bid_leveling_procurement_review/SKILL.md",
+      "computedHash": "fc8db97f86745690a1074166d5f5c2b83567040f7c7080292d254a0b5718cd90"
+    },
+    "CEO / Executive Leader (Residential Multifamily)": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/roles/ceo_executive_leader/SKILL.md",
+      "computedHash": "9dd38d65fa720fb230ee540c97f58e4a9264ce0b54e05c1374f59d0fc304b6a2"
+    },
+    "CFO / Finance Leader (Residential Multifamily)": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/roles/cfo_finance_leader/SKILL.md",
+      "computedHash": "afb5259e7d2156fbabf5411040aeea35d1f931cdbf99341b88740a217aed7630"
+    },
+    "COO / Operations Leader (Residential Multifamily)": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/roles/coo_operations_leader/SKILL.md",
+      "computedHash": "b16e635cc231d365f2819d42cef0702f7047a0fd8b559440be0270f37b7546cd"
+    },
+    "Change Order Review": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/workflows/change_order_review/SKILL.md",
+      "computedHash": "91152b6fe99e8efab195b71e59cd05be58fe58ab793e43006b63a473fef11bd5"
+    },
+    "Construction Manager (Residential Multifamily)": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/roles/construction_manager/SKILL.md",
+      "computedHash": "d26a29c6b482f16825f31dfbf42d930067280a8a2cae8f897a890f53caabe5c8"
+    },
+    "Construction Meeting Prep and Action Tracking": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/workflows/construction_meeting_prep_and_action_tracking/SKILL.md",
+      "computedHash": "eaff0d1af9d6efe82bd7b79429d5058c6d672e1058e8eb86892b533003b8c03d"
+    },
+    "Delinquency and Collections": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/workflows/delinquency_collections/SKILL.md",
+      "computedHash": "760637633d3aeb140605723e4105608583b107f45f449f51aef3e6415cb4d927"
+    },
+    "Delivery Handoff": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/workflows/delivery_handoff/SKILL.md",
+      "computedHash": "97bcdb99e35d1402885cf8912e2ae36ca44ac12d5177ed2d9761eeeaddff8fd0"
+    },
+    "Estimator / Preconstruction Lead (Residential Multifamily)": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/roles/estimator_preconstruction_lead/SKILL.md",
+      "computedHash": "4200678c2692d0466f2acba38b93976b477edf4fd1cca121308dc7167c8a0de5"
+    },
+    "Executive Operating Summary Generation": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/workflows/executive_operating_summary_generation/SKILL.md",
+      "computedHash": "bd995cb7eb68280b092e9e8ca667b268ce8091f8a3d6102f501f305575785620"
+    },
+    "Executive Pipeline Summary": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/workflows/executive_pipeline_summary/SKILL.md",
+      "computedHash": "d43619e620cc11fbd6c11985532b78434a520b2facf18c012b35ded087dc912e"
+    },
+    "Investment Committee Prep": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/residential_multifamily/workflows/investment_committee_prep/SKILL.md",
+      "computedHash": "6a07c4b75478155ba7bc60c0ff29dbcbc122a7a36d1361a69f7d805e9393b7da"
+    },
+    "asset-ops-cockpit": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/asset-ops-cockpit/SKILL.md",
+      "computedHash": "a9672774636ba9fe0f5db819e5d641624380b067e4086d93272da34e77fffe61"
+    },
+    "building-systems-maintenance-manager": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/building-systems-maintenance-manager/SKILL.md",
+      "computedHash": "309443f61c5fb2f99a79fe50d89d2909cccbd203e2ccd046f73ea32c37370780"
+    },
+    "carbon-audit-compliance": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/carbon-audit-compliance/SKILL.md",
+      "computedHash": "8bf2e3b483d7d08e6813f082e7aaf62bed5fa542256cbbf55e89bd7d48269388"
+    },
+    "climate-risk-assessment": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/climate-risk-assessment/SKILL.md",
+      "computedHash": "5fa9adc719c5a3ea5fdc15678b1e8455b54cf612d6e6179243f954cce3dfec97"
+    },
+    "closing-checklist-tracker": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/closing-checklist-tracker/SKILL.md",
+      "computedHash": "7a701fd8bf89900f14847c32b53d571ec4d92735c37a090597157e6f62f2419d"
+    },
+    "compliance-regulatory-response-kit": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/compliance-regulatory-response-kit/SKILL.md",
+      "computedHash": "6df817d11c355e11a580007f826cd14689a7fd7601dbb65213bdfc868e183e64"
+    },
+    "construction-budget-gc-analyzer": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/construction-budget-gc-analyzer/SKILL.md",
+      "computedHash": "58cdc7302960c9bd94193f17bd9fc2d88c846c50e77ac7877700129ce4b180ee"
+    },
+    "construction-cost-estimator": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/construction-cost-estimator/SKILL.md",
+      "computedHash": "ec00932743e43bed6dea0b3764de1efaea3041574cde5528df4885015b74644f"
+    },
+    "construction-procurement-contracts-engine": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/construction-procurement-contracts-engine/SKILL.md",
+      "computedHash": "e0b07aa353133b8175044538ac942e799683799b687e41767fd11d52f10c8f5b"
+    },
+    "construction-project-command-center": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/construction-project-command-center/SKILL.md",
+      "computedHash": "d3fc2972332c5477d792973cc51e5676b98b7e22dad73c744acb03a015886731"
+    },
+    "cost-segregation-analyzer": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/cost-segregation-analyzer/SKILL.md",
+      "computedHash": "9a19ed87ee65abec969d69a5cc2eb4a42cf5e4f47d0be1916577755284365dbb"
+    },
+    "deal-underwriting-assistant": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/deal-underwriting-assistant/SKILL.md",
+      "computedHash": "b4560cc048a0fab6c2e96ce65acfb1da60c6005f908ab5d57e02f8167a626c6d"
+    },
+    "debt-covenant-monitor": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/debt-covenant-monitor/SKILL.md",
+      "computedHash": "1bb37d347d1f27b600e8662202ab503404ea156e5c422678b4c117d9e2053f3e"
+    },
+    "debt-portfolio-monitor": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/debt-portfolio-monitor/SKILL.md",
+      "computedHash": "eb3f99df14e4c0f32ae80a149ecc38b02f1cd56245a83d283ed9928cc05a46fb"
+    },
+    "distribution-notice-generator": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/distribution-notice-generator/SKILL.md",
+      "computedHash": "9da31cfc73040721d34786bc03e141cba9ce149f42a03269ed05a095bbc36973"
+    },
+    "emerging-manager-evaluator": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/emerging-manager-evaluator/SKILL.md",
+      "computedHash": "425959aac28c7340549a63a910b06a7ccfe6e893c46a286c5c437efc6d49d5c9"
+    },
+    "entitlement-feasibility": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/entitlement-feasibility/SKILL.md",
+      "computedHash": "cd99c91971ec0ca31a2cdda7dc4a6f12241fdb934e3e8ff4f7d5e5768a91a500"
+    },
+    "fund-raise-negotiation-engine": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/fund-raise-negotiation-engine/SKILL.md",
+      "computedHash": "d9af42c4a058ec0885a20f95e78f1984eb6674d69f1635cd70a550c6d5995c76"
+    },
+    "insurance-risk-manager": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/insurance-risk-manager/SKILL.md",
+      "computedHash": "ff12a15bf8929e915ae3cde8f6b0c114623e39c2397b82063284865e5d7d1768"
+    },
+    "investor-lifecycle-manager": {
+      "source": "mariourquia/cre-skills-plugin",
+      "sourceType": "github",
+      "skillPath": "src/skills/investor-lifecycle-manager/SKILL.md",
+      "computedHash": "2cf8ad78a56be55ba33287ffdc576238df14f49635e14febc2b3044827a3fc84"
+    }
+  }
+}
